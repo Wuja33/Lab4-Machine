@@ -1,0 +1,2 @@
+Main-Class: appswing.bin.appswing.main.MainFrame
+Class-Path: appswing.lib.jcommon-1.0.23.jar appswing.lib.jfreechart-1.0.19.jar

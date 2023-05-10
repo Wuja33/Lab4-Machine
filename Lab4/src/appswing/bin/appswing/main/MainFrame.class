@@ -1,0 +1,50 @@
+package main;
+
+import panels.MainFrameConsole;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Random;
+
+public class World {
+    ServerSocket serverSocket;
+    Thread threadServer;
+
+    public static void main(String[] args) {
+        MainFrameConsole mainFrameConsole = new MainFrameConsole("World");
+        World world = new World();
+        world.startConsole();
+    }
+
+
+    public void startConsole()
+    {
+        threadServer = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    serverSocket = new ServerSocket(2002);
+                    while (!serverSocket.isClosed())
+                    {
+                        System.out.println("here");
+                        Socket socketShip = serverSocket.accept();
+                        System.out.println("here2");
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(socketShip.getInputStream()));
+                        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socketShip.getOutputStream()));
+                        String str = reader.readLine();
+
+                        System.out.println(str);
+                        if (str.startsWith("initialize"))
+                           writer.write(initializeShip(str));
+                    }
+                }
+                catch (IOException e)
+                {
+
+                }
+            }
+        });
+        threadServer.start();
+    }
+}

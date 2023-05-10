@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lab4/out/production/Lab4/appswing/lib/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lab4/out/production/Lab4/appswing/lib/jfreechart-1.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

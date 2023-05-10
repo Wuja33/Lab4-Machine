@@ -12,7 +12,6 @@ import java.awt.*;
  *
  */
 
-
 public class MainFrame extends JFrame{
     MainPanel mainPanel;
 
